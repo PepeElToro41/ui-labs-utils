@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/@rbxts/ui-labs.svg?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/@rbxts/ui-labs)s
+
 # UI Labs Utilities for Roblox-ts
 
 ### UI Labs is a Storybook-like plugin for roblox that allows you to visualize stories in real-time without needing to run your code
