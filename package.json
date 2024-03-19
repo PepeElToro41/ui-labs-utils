@@ -1,0 +1,48 @@
+{
+	"name": "@rbxts/ui-labs",
+	"version": "2.0.0",
+	"description": "Utilities for UI-Labs, a storybook-like plugin for roblox",
+	"main": "src/init.lua",
+	"scripts": {
+		"watch": "rbxtsc -w --type=game -p test -i test/include",
+		"serve": "rojo serve test/default.project.json"
+	},
+	"keywords": [
+		"uilabs",
+		"storybook",
+		"flipbook", 
+		"hoarcekat",
+		"ui",
+		"gui",
+		"roact",
+		"react",
+		"roblox-ts",
+		"rbxts"
+	],
+	"author": "PepeElToro",
+	"license": "MIT",
+	"types": "src/index.d.ts",
+	"files": [
+		"src",
+		"!**/*.tsbuildinfo",
+		"!**/*.spec.lua"
+	], 
+	"publishConfig": {
+		"access": "public"
+	},
+	"devDependencies": {
+		"@rbxts/compiler-types": "2.1.0-types.1",
+		"@rbxts/services": "^1.5.1",
+		"@rbxts/types": "^1.0.704",
+		"@typescript-eslint/eslint-plugin": "^5.61.0",
+		"@typescript-eslint/parser": "^5.61.0",
+		"eslint": "^8.44.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-roblox-ts": "^0.0.35",
+		"prettier": "^2.8.8",
+		"roblox-ts": "^2.2.0",
+		"typescript": "^4.9.4"
+	} 
+}
+ 

@@ -1,0 +1,8 @@
+/node_modules
+/Packages
+/.vscode
+/test/include
+/test/out
+*.tsbuildinfo
+.DS_Store
+sourcemap.json
