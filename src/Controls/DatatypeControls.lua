@@ -1,7 +1,8 @@
-local CreateBaseControl = require(script.Parent.Utils).CreateBaseControl
+local Utils = require(script.Parent.Utils).CreateBaseControl
+local CreateBaseControl = Utils.CreateBaseControl
 local Datatypes = {}
 
-function Datatypes.Color3(def: Color3)
+function Datatypes.Color3(def: Color3): Utils.Control<Color3>
 	local fixedColor = Color3.new(math.clamp(def.R, 0, 1), math.clamp(def.G, 0, 1), math.clamp(def.B, 0, 1))
 	return CreateBaseControl("Color3", fixedColor)
 end

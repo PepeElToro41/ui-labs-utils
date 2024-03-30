@@ -1,9 +1,10 @@
-type RecordList = { [string]: any }
+type RecordList<T> = { [string]: T }
 
-local CreateBaseControl = require(script.Parent.Utils).CreateBaseControl
+local Utils = require(script.Parent.Utils)
+local CreateBaseControl = Utils.CreateBaseControl
 local Controls = {}
 
-function Controls.Choose(list: { any }, def: number?)
+function Controls.Choose<T>(list: { T }, def: number?): Utils.Control<T>
 	if #list <= 0 then
 		error("UI-Labs: Array given in a Choose control is empty")
 	end
@@ -18,7 +19,7 @@ function Controls.Choose(list: { any }, def: number?)
 	return control
 end
 
-function Controls.EnumList(list: RecordList, def: string)
+function Controls.EnumList<T>(list: RecordList<T>, def: string): Utils.Control<T>
 	if list[def] == nil then
 		error(`UI-Labs: Key given for the EnumList list ({def}) does not exist in the list`)
 	end
@@ -35,14 +36,14 @@ function Controls.EnumList(list: RecordList, def: string)
 	return control
 end
 
-function Controls.RGBA(def: Color3, transparency: number?)
+function Controls.RGBA(def: Color3, transparency: number?): Utils.Control<{ Color: Color3, Transparency: number }>
 	return CreateBaseControl("RGBA", {
 		Color = def,
 		Transparency = transparency or 0,
 	})
 end
 
-function Controls.Slider(def: number, min: number, max: number, step: number?)
+function Controls.Slider(def: number, min: number, max: number, step: number?): Utils.Control<number>
 	if max <= min then
 		error(`UI-Labs: Max slider value ({max}) must be greater than the Min value ({min})`)
 	end
@@ -57,12 +58,14 @@ end
 
 type ObjectPredicator = (instance: Instance) -> boolean
 
-function Controls.Object(className: string?, predicator: ObjectPredicator?)
-	local control = CreateBaseControl("Object", nil)
+function Controls.Object(className: string?, def: Instance?, predicator: ObjectPredicator?): Utils.Control<Instance?>
+	local control = CreateBaseControl("Object", def)
 	control.ClassName = className or "Instance"
 	control.Predicator = predicator
 
 	return control
 end
+
+-- [[ TYPES ]] --
 
 return Controls

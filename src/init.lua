@@ -4,6 +4,14 @@ local AdvancedControls = require(script.Controls.AdvancedControls)
 local StoryCreators = require(script.StoryCreators)
 local ControlUtils = require(script.Controls.ControlUtils)
 
+type PrimitiveControls = typeof(PrimitiveControls)
+type DatatypeControls = typeof(DatatypeControls)
+type AdvancedControls = typeof(AdvancedControls)
+type StoryCreators = typeof(StoryCreators)
+type ControlUtils = typeof(ControlUtils)
+
+type UILabs = PrimitiveControls & { Datatype: DatatypeControls } & AdvancedControls & StoryCreators & ControlUtils
+
 function CombinedExport(...)
 	local final = {}
 	for _, module in pairs({ ... }) do
@@ -14,4 +22,12 @@ function CombinedExport(...)
 	return final
 end
 
-return CombinedExport(PrimitiveControls, ControlUtils, AdvancedControls, StoryCreators, { Datatype = DatatypeControls })
+local UILabs = CombinedExport(
+	PrimitiveControls,
+	ControlUtils,
+	AdvancedControls,
+	StoryCreators,
+	{ Datatype = DatatypeControls }
+) :: UILabs
+
+return UILabs

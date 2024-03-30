@@ -1,5 +1,9 @@
 local Utils = {}
 
+export type Control<T> = {
+	ControlValue: T,
+}
+
 function Utils.CreateBaseControl(controlType: string, def, onReset: () -> any)
 	local control = {
 		EntryType = "Control",

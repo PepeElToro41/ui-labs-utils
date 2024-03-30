@@ -3,13 +3,21 @@ import { AllControls, ControlsList, ObjectControl, ReturnControls } from "./Cont
 import { LibLike } from "./Libs";
 import { ControlGroup } from "./ControlTypings/ControlUtils";
 import { Signal } from "./Libraries/Signal";
+import { IsDatatype } from "./ControlTypings/Datatypes";
 
 type Widen<T> = T extends string ? string : T extends number ? number : T extends boolean ? boolean : T;
 
 type ConditionalWiden<T, W extends boolean> = W extends true ? Widen<T> : T;
 
 //CONTROL INFERENCE
-type InferControlType<T extends AllControls> = T extends IsPrimitive ? T : T extends ObjectControl ? T["ControlValue"] : never;
+type InferControlType<T extends AllControls> = T extends IsPrimitive
+	? T
+	: T extends IsDatatype
+	? T
+	: T extends ObjectControl
+	? T["ControlValue"]
+	: never;
+
 type InferControlGroup<T extends ControlsList = ControlsList> = {
 	[K in keyof T]: InferControlType<T[K]>;
 };

@@ -4,7 +4,10 @@
 
 ### UI Labs is a Storybook-like plugin for roblox that allows you to visualize stories in real-time without needing to run your code
 
-You can find the plugin here: [Roblox Store (250R$)](https://create.roblox.com/store/asset/14293316215/UI-Labs%3Fkeyword=&pageNumber=&pagePosition=) - [Github (Open Source)](https://github.com/PepeElToro41/ui-labs)
+You can find the plugin here:
+
+-   [Roblox Store (250R$)](https://create.roblox.com/store/asset/14293316215/)
+-   [Github (Open Source)](https://github.com/PepeElToro41/ui-labs)
 
 ---
 
