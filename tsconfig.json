@@ -16,6 +16,10 @@
 		"strict": true,
 		"target": "ESNext",
 		"typeRoots": ["node_modules/@rbxts"],
+      "types": [
+         "types/plugin",
+         "services/plugin"
+      ],
 
 		// configurable
 		"rootDir": "src",

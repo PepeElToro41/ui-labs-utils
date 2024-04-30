@@ -1,0 +1,12 @@
+[package]
+name = "pepeeltoro/ui-labs"
+description = "Utilities for UI Labs"
+license = "MIT"
+version = "0.1.0"
+authors = ["PepeElToro41"]
+
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+exclude = ["node_modules"]
+include = ["src", "src/*", "default.project.json", "wally.toml", "wally.lock"]

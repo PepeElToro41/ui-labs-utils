@@ -7,6 +7,17 @@ import { IsDatatype } from "./ControlTypings/Datatypes";
 
 type Widen<T> = T extends string ? string : T extends number ? number : T extends boolean ? boolean : T;
 
+interface Storybook {
+	name?: string;
+	storyRoots: Instance[];
+	groupRoots?: boolean;
+
+	// Will be ignored, dont use it
+	react?: LibLike.React;
+	reactRoblox?: LibLike.ReactRoblox;
+	roact?: LibLike.Roact;
+}
+
 type ConditionalWiden<T, W extends boolean> = W extends true ? Widen<T> : T;
 
 //CONTROL INFERENCE
@@ -77,8 +88,8 @@ interface StoryCreationKey<T extends StoryInfo, C extends Callback> {
 	story: StoryCreation<T, C>;
 }
 
-type FunctionCleaner = () => void;
-type FunctionStory = (target: Frame) => FunctionCleaner;
+type StoryCleaner = () => void;
+type FunctionStory = (target: Frame) => StoryCleaner;
 
 type ReactStory<T extends StoryInfo, L extends LibLike.React, R extends LibLike.ReactRoblox> = T &
 	StoryBase &

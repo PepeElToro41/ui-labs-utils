@@ -1,4 +1,4 @@
-local Utils = require(script.Parent.Utils).CreateBaseControl
+local Utils = require(script.Parent.Utils)
 local CreateBaseControl = Utils.CreateBaseControl
 local Datatypes = {}
 

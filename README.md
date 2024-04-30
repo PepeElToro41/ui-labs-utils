@@ -6,11 +6,11 @@
 
 You can find the plugin here:
 
--   [Roblox Store (250R$)](https://create.roblox.com/store/asset/14293316215/)
--   [Github (Open Source)](https://github.com/PepeElToro41/ui-labs)
+> [Roblox Store](https://create.roblox.com/store/asset/14293316215/) > [Github](https://github.com/PepeElToro41/ui-labs)
 
 ---
 
 ### This package offers you utilities and typings for UI Labs
 
-Visits the [Documentation](https://ui-labs-roblox.github.io/ui-labs-docs/) here
+Visit the [Documentation](https://ui-labs-roblox.github.io/ui-labs-docs/) here
+[NPM Package](https://www.npmjs.com/package/@rbxts/ui-labs)
