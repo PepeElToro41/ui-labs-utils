@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/ui-labs",
-	"version": "2.1.0-test1", 
+	"version": "2.1.1", 
 	"description": "Utilities for UI-Labs, a storybook-like plugin for roblox",
 	"main": "src/init.lua",
 	"scripts": {
@@ -9,10 +9,11 @@
 	},
 	"keywords": [
 		"uilabs",
+      "ui-labs",
 		"storybook",
-		"flipbook", 
+		"flipbook",
 		"hoarcekat",
-		"ui",
+		"ui", 
 		"gui",
 		"roact",
 		"react",
@@ -26,7 +27,7 @@
 		"src",
 		"!**/*.tsbuildinfo",
 		"!**/*.spec.lua"
-	], 
+	],
 	"publishConfig": {
 		"access": "public"
 	},
@@ -43,6 +44,5 @@
 		"prettier": "^2.8.8",
 		"roblox-ts": "^2.2.0",
 		"typescript": "^4.9.4"
-	} 
+	}
 }
- 

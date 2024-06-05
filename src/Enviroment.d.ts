@@ -14,6 +14,7 @@ export declare namespace Enviroment {
 	const GetJanitor: <T extends object | void = void>() => Janitor<T>;
 
 	const InputListener: InputSignals;
+	const UserInput: UserInputService;
 	const EnviromentUID: string;
 	const PreviewUID: string;
 	const OriginalG: _G;

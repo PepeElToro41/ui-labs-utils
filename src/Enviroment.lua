@@ -1,3 +1,4 @@
+local UserInputService = game:GetService("UserInputService")
 local Enviroment = {}
 
 Enviroment.EnvGlobalInjectionKey = "__hotreload_env_global_injection__" -- the longer the better
@@ -27,7 +28,9 @@ Enviroment.GetJanitor = function()
 	return janitor
 end
 
-Enviroment.InputListener = SearchInEnv("InputListener", "") :: string
+Enviroment.InputListener = SearchInEnv("InputListener", nil) :: UserInputService
+Enviroment.UserInput = SearchInEnv("InputListener", UserInputService) :: UserInputService
+
 Enviroment.EnviromentUID = SearchInEnv("EnviromentUID", "") :: string
 Enviroment.PreviewUID = SearchInEnv("PreviewUID", "") :: string
 Enviroment.OriginalG = SearchInEnv("OriginalG", _G) :: any
