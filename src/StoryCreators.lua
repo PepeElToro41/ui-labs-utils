@@ -80,4 +80,13 @@ function Creators.CreateFusionStory(info: StoryInfo & WithFusion, render: StoryR
 	return CombineTableInfo(returnStory, info)
 end
 
+function Creators.CreateGenericStory(info: StoryInfo & WithGeneric, render: StoryRender)
+	local returnStory = {
+		use = "Generic",
+		render = render,
+	}
+
+	return CombineTableInfo(returnStory, info)
+end
+
 return Creators

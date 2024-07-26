@@ -28,7 +28,14 @@ Environment.GetJanitor = function()
 	return janitor
 end
 
-Environment.InputListener = SearchInEnv("InputListener", nil) :: UserInputService
+type InputSignals = {
+	InputBegan: RBXScriptSignal,
+	InputEnded: RBXScriptSignal,
+	InputChanged: RBXScriptSignal,
+	MouseMoved: RBXScriptSignal,
+}
+
+Environment.InputListener = SearchInEnv("InputListener", nil) :: InputSignals
 Environment.UserInput = SearchInEnv("InputListener", UserInputService) :: UserInputService
 
 Environment.EnvironmentUID = SearchInEnv("EnvironmentUID", "") :: string

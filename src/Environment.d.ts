@@ -1,5 +1,5 @@
 import { Janitor } from "./Libraries/Janitor";
-import { InputSignals } from "./Typing";
+import { InputSignals } from "./Typing/Typing";
 
 declare const EnvGlobalInjectionKey: string;
 
