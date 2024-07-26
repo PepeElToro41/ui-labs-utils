@@ -84,6 +84,36 @@
   resolved "https://registry.yarnpkg.com/@rbxts/compiler-types/-/compiler-types-2.1.0-types.1.tgz#60eb32109fc2299826fd5d1e8f4e7cfc08d9a5ae"
   integrity sha512-+ztwutzuNivWsgsERiC7n5il4C5gfJUuGJUmXYRq8FwY4ye3aupRi9RocmyAHq6255sO7z+RM61AVbqx3llsLQ==
 
+"@rbxts/fusion@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/fusion/-/fusion-0.2.0.tgz#082cbe02299abe36a0ff376535ce0eaac87ec190"
+  integrity sha512-Hs+IXSPM+5KE4FMKh+zyifG2+1EI8B0K1DA3gN6TncwiQxdVzz6XchxRVI/BTqto7uLBtEAVMQzhrkUneaJNIQ==
+
+"@rbxts/react-roblox@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@rbxts/react-roblox/-/react-roblox-0.3.6.tgz#2d777a571cdd0c556f4a45e9ea922684dd6da0e3"
+  integrity sha512-4o6UUPXHZMZuUuAl92aTe/b1YoQkuPFsah3iQVV+Ic50cJivX0cBqEs5sGj6GviBUbQI1ZilYBhlc0/uk63iSA==
+  dependencies:
+    "@rbxts/react" "0.3.6"
+    "@rbxts/react-vendor" "0.3.6"
+
+"@rbxts/react-vendor@0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@rbxts/react-vendor/-/react-vendor-0.3.6.tgz#4a493e74d648cc88aab0b192c16449698ebc3010"
+  integrity sha512-q3HilP6ZNHSgWW0lwka+Ft4Iq+fnPBppOeQhGua1XCtM2hEqhmUmME8DI1UlnaK/aGzdYW1bWC7YfHZhHGsIeA==
+
+"@rbxts/react@0.3.6", "@rbxts/react@^0.3.6":
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/@rbxts/react/-/react-0.3.6.tgz#9ab6811db1de490270ff9cc6ac598a3d36413c03"
+  integrity sha512-GeEqKjjyJT3zG85xEVCu3IMQdYRoXk4P9XCua4oriTIfuJaSTOWUukOmQ5ILpG/BpksLqXlpH8zqKKZcZaIs3g==
+  dependencies:
+    "@rbxts/react-vendor" "0.3.6"
+
+"@rbxts/roact@^1.4.4-ts.0":
+  version "1.4.4-ts.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/roact/-/roact-1.4.4-ts.0.tgz#7f297bec03dbea9473bd2d82b148d3ae6e4f6c00"
+  integrity sha512-gn9mBoGG/Clzgv2kyOvLNVd9dh5t6z+jukC3ITv2HnfPqvf/sMbz/VMaBoiB7t5umuiIe0LjW0ctZrkrS+uTOA==
+
 "@rbxts/services@^1.5.1":
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/@rbxts/services/-/services-1.5.1.tgz#4536a87932f28797507ed591f0061277c52ea77f"

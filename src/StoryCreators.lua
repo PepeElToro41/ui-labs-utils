@@ -17,7 +17,17 @@ type WithRoact = {
 	roact: any?,
 	use: "Roact"?,
 }
+type WithFusion = {
+	fusion: any?,
+	use: "Fusion"?,
+}
+type WithGeneric = {
+	use: "Generic",
+}
+
+type Props = { controls: { [string]: any }, inputListener: InputSignals }
 type StoryRender = (props: Props) -> any
+
 type StoryRenderKey = {
 	story: StoryRender,
 }
@@ -27,7 +37,8 @@ type InputSignals = {
 	InputChanged: RBXScriptConnection,
 	MouseMoved: RBXScriptConnection,
 }
-type Props = { controls: { [string]: any }, inputListener: InputSignals }
+
+type GenericProps = {}
 
 local function CombineTableInfo(table1, table2)
 	for key, val in pairs(table2) do
@@ -60,9 +71,7 @@ function Creators.CreateReactStory(
 	return CombineTableInfo(returnStory, info)
 end
 
--- TODO: SUPPORT FUSION AAAA D:
---[[
-function Creators.CreateFusionStory(info, render)
+function Creators.CreateFusionStory(info: StoryInfo & WithFusion, render: StoryRender)
 	local returnStory = {
 		use = "Fusion",
 		story = render,
@@ -70,6 +79,5 @@ function Creators.CreateFusionStory(info, render)
 
 	return CombineTableInfo(returnStory, info)
 end
-]]
 
 return Creators

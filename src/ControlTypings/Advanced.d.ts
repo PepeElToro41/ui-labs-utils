@@ -1,14 +1,19 @@
-import { ConditionalWiden } from "../Typing";
 import { BaseControl } from "./Typing";
+
+type Widen<T> = T extends string ? string : T extends number ? number : T extends boolean ? boolean : T;
+type ConditionalWiden<T, W extends boolean> = W extends true ? Widen<T> : T;
 
 type CheckeableDatatypes = Pick<CheckableTypes, Exclude<keyof CheckableTypes, keyof CheckablePrimitives>>;
 type ListType = [string, number, boolean, Callback, object][number];
 type ChooseOptionType = CheckeableDatatypes | ListType;
 
-interface IsRGBA {
+interface RGBA {
 	Color: Color3;
 	Transparency: number;
 }
+
+// I want to keep the "RGBA" name for the control type, but it collides with AdvancedTypes.RGBA
+type OuterRGBA = RGBA;
 
 //TYPES
 export declare namespace AdvancedTypes {
@@ -21,7 +26,7 @@ export declare namespace AdvancedTypes {
 		DefIndex: string;
 		CurrentIndex: string;
 	}
-	interface RGBA extends BaseControl<"RGBA", IsRGBA> {}
+	interface RGBA extends BaseControl<"RGBA", OuterRGBA> {}
 	interface Slider extends BaseControl<"Slider", number> {
 		Min: number;
 		Max: number;

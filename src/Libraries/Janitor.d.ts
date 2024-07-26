@@ -1,4 +1,4 @@
-// Types borrowed from @rbxts/janitor
+// Types borrowed from @rbxts/janitor (cleaning methods were removed)
 
 export interface Janitor<U extends object | void = void> {
 	/**

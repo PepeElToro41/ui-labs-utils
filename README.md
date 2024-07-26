@@ -6,9 +6,9 @@
 
 You can find the plugin here:
 
-> [Roblox Store](https://create.roblox.com/store/asset/14293316215/)
+-   [Roblox Store](https://create.roblox.com/store/asset/14293316215/)
 
-> [Github](https://github.com/PepeElToro41/ui-labs)
+-   [Github](https://github.com/PepeElToro41/ui-labs)
 
 ---
 
