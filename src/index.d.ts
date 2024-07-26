@@ -14,4 +14,4 @@ export { GenericStory, InferGenericProps, InferInfos, InferInfosGroup } from "./
 
 export { ControlGroup } from "./ControlTypings/ControlUtils";
 export { Datatype } from "./ControlTypings/Datatypes";
-export { Enviroment } from "./Enviroment";
+export { Environment } from "./Environment";

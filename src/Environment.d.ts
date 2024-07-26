@@ -3,7 +3,7 @@ import { InputSignals } from "./Typing";
 
 declare const EnvGlobalInjectionKey: string;
 
-export declare namespace Enviroment {
+export declare namespace Environment {
 	const EnvGlobalInjectionKey: string;
 	const GetEnvGlobalInjection: () => object | undefined;
 
@@ -15,7 +15,7 @@ export declare namespace Enviroment {
 
 	const InputListener: InputSignals;
 	const UserInput: UserInputService;
-	const EnviromentUID: string;
+	const EnvironmentUID: string;
 	const PreviewUID: string;
 	const OriginalG: _G;
 	const PluginWidget: DockWidgetPluginGui;
