@@ -3,14 +3,14 @@ local DatatypeControls = require(script.Controls.DatatypeControls)
 local AdvancedControls = require(script.Controls.AdvancedControls)
 local StoryCreators = require(script.StoryCreators)
 local ControlUtils = require(script.Controls.ControlUtils)
-local Enviroment = require(script.Enviroment)
+local Environment = require(script.Environment)
 
 type PrimitiveControls = typeof(PrimitiveControls)
 type DatatypeControls = typeof(DatatypeControls)
 type AdvancedControls = typeof(AdvancedControls)
 type StoryCreators = typeof(StoryCreators)
 type ControlUtils = typeof(ControlUtils)
-type Enviroment = typeof(Enviroment)
+type Environment = typeof(Environment)
 
 type UILabs =
 	PrimitiveControls
@@ -18,7 +18,7 @@ type UILabs =
 	& AdvancedControls
 	& StoryCreators
 	& ControlUtils
-	& { Enviroment: Enviroment }
+	& { Environment: Environment }
 
 export type Storybook = {
 	name: string?,
@@ -42,7 +42,7 @@ local UILabs = CombinedExport(
 	ControlUtils,
 	AdvancedControls,
 	StoryCreators,
-	{ Enviroment = Enviroment },
+	{ Environment = Environment },
 	{ Datatype = DatatypeControls }
 ) :: UILabs
 
