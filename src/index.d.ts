@@ -7,4 +7,4 @@ export { Choose, EnumList, RGBA, Slider, Object } from "./ControlTypings/Advance
 export { CreateReactStory, CreateRoactStory } from "./StoryCreators";
 export { ControlGroup } from "./ControlTypings/ControlUtils";
 export { Datatype } from "./ControlTypings/Datatypes";
-export { Enviroment } from "./Enviroment";
+export { Environment } from "./Environment";
