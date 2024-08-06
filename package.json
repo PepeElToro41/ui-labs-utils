@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/ui-labs",
-	"version": "2.2.0-test2",
+	"version": "2.2.0",
 	"description": "Utilities for UI-Labs, a storybook-like plugin for roblox",
 	"main": "src/init.lua",
 	"scripts": {
