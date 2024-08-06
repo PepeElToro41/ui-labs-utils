@@ -89,6 +89,11 @@
   resolved "https://registry.yarnpkg.com/@rbxts/fusion/-/fusion-0.2.0.tgz#082cbe02299abe36a0ff376535ce0eaac87ec190"
   integrity sha512-Hs+IXSPM+5KE4FMKh+zyifG2+1EI8B0K1DA3gN6TncwiQxdVzz6XchxRVI/BTqto7uLBtEAVMQzhrkUneaJNIQ==
 
+"@rbxts/iris@^2.2.0-ts.0":
+  version "2.2.0-ts.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/iris/-/iris-2.2.0-ts.0.tgz#39845d47d731702cdf2efb4ca1baaa3d5d1863cf"
+  integrity sha512-oOiURnUsnPMztNk/2GitbJ5A0dnh8PtgyqcODX9IL651y7wZOfIX7f+N+/WDyiDs5HGuybOCUyU+VBzjjAdekw==
+
 "@rbxts/react-roblox@^0.3.6":
   version "0.3.6"
   resolved "https://registry.yarnpkg.com/@rbxts/react-roblox/-/react-roblox-0.3.6.tgz#2d777a571cdd0c556f4a45e9ea922684dd6da0e3"

@@ -50,10 +50,13 @@ type InferControls<T extends ReturnControls> = {
 		? InferControlType<T[K]>
 		: never;
 };
-type ControlProps<T extends ReturnControls | undefined> = {
+type StoryProps<T extends ReturnControls | undefined> = {
 	controls: T extends ReturnControls ? InferControls<T> : never;
 };
-type InferProps<C extends ReturnControls> = ExcludeMembers<ControlProps<C> & IntrinsicProps, never>;
+
+type GetStoryProps<T> = ExcludeMembers<T & IntrinsicProps, never>;
+
+type InferProps<C extends ReturnControls> = GetStoryProps<StoryProps<C>>;
 
 interface IntrinsicProps {
 	inputListener: InputSignals;

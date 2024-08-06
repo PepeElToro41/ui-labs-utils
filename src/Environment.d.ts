@@ -11,6 +11,7 @@ export declare namespace Environment {
 	const Unmount: () => void;
 	const Reload: () => void;
 	const CreateSnapshot: (name?: string) => void;
+	const SetStoryHolder: (holder?: Instance | undefined) => void;
 	const GetJanitor: <T extends object | void = void>() => Janitor<T>;
 
 	const InputListener: InputSignals;
@@ -19,4 +20,5 @@ export declare namespace Environment {
 	const PreviewUID: string;
 	const OriginalG: _G;
 	const PluginWidget: DockWidgetPluginGui;
+	const Plugin: Plugin;
 }

@@ -21,8 +21,10 @@ function Environment.IsStory()
 end
 
 Environment.Unmount = SearchInEnv("Unmount", function() end) :: () -> ()
+
 Environment.Reload = SearchInEnv("Reload", function() end) :: () -> ()
-Environment.CreateSnapshot = SearchInEnv("CreateSnapshot", function() end) :: () -> ()
+Environment.CreateSnapshot = SearchInEnv("CreateSnapshot", function() end) :: (name: string?) -> ()
+Environment.SetStoryHolder = SearchInEnv("SetStoryHolder", function() end) :: (holder: Instance?) -> ()
 Environment.GetJanitor = function()
 	local janitor = SearchInEnv("StoryJanitor")
 	return janitor

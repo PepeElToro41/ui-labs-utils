@@ -20,3 +20,6 @@ type AllControls = ObjectControl | IsPrimitive | IsDatatype;
 
 type ControlsList = Record<string, AllControls>;
 type ReturnControls = Record<string, AllControls | ControlGroup>;
+
+type ConvertedControlList = Record<string, ObjectControl>;
+type ConvertedControls = Record<string, ObjectControl | ControlGroup<ConvertedControlList>>;

@@ -31,14 +31,21 @@ type StoryRender = (props: Props) -> any
 type StoryRenderKey = {
 	story: StoryRender,
 }
+
+type Listener = (values: { [string]: any }, info: { [string]: any }) -> any
+type Updater = (listener: Listener) -> any
+type GenericProps = { controls: { [string]: any }, updated: Updater }
+type GenericStoryRender = (props: GenericProps) -> any
+type StoryGenericRenderKey = {
+	render: StoryRender,
+}
+
 type InputSignals = {
 	InputBegan: RBXScriptConnection,
 	InputEnded: RBXScriptConnection,
 	InputChanged: RBXScriptConnection,
 	MouseMoved: RBXScriptConnection,
 }
-
-type GenericProps = {}
 
 local function CombineTableInfo(table1, table2)
 	for key, val in pairs(table2) do
@@ -71,7 +78,10 @@ function Creators.CreateReactStory(
 	return CombineTableInfo(returnStory, info)
 end
 
-function Creators.CreateFusionStory(info: StoryInfo & WithFusion, render: StoryRender)
+function Creators.CreateFusionStory(
+	info: StoryInfo & WithFusion,
+	render: StoryRender
+): StoryInfo & WithFusion & StoryRenderKey
 	local returnStory = {
 		use = "Fusion",
 		story = render,
@@ -80,7 +90,10 @@ function Creators.CreateFusionStory(info: StoryInfo & WithFusion, render: StoryR
 	return CombineTableInfo(returnStory, info)
 end
 
-function Creators.CreateGenericStory(info: StoryInfo & WithGeneric, render: StoryRender)
+function Creators.CreateGenericStory(
+	info: StoryInfo & WithGeneric,
+	render: StoryRender
+): StoryInfo & WithGeneric & StoryGenericRenderKey
 	local returnStory = {
 		use = "Generic",
 		render = render,

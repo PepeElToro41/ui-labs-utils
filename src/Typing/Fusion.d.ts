@@ -1,7 +1,7 @@
 import Fusion from "@rbxts/fusion";
 import { ControlGroup } from "../ControlTypings/ControlUtils";
 import { AllControls, ControlsList, ReturnControls } from "../ControlTypings/Typing";
-import { InferControlType } from "./Typing";
+import { GetStoryProps, InferControlType, StoryCleanup } from "./Typing";
 import { IntrinsicProps, StoryBase, StoryCreationKey, StoryInfo } from "./Typing";
 
 interface WithFusion {
@@ -21,16 +21,14 @@ type InferFusionControls<T extends ReturnControls> = {
 		: never;
 };
 
-type FusionControlProps<T extends ReturnControls> = {
+type FusionProps<T extends ReturnControls> = {
 	controls: T extends ReturnControls ? InferFusionControls<T> : never;
+	target: Frame;
 };
 
-type InferFusionProps<T extends ReturnControls> = ExcludeMembers<
-	FusionControlProps<T> & IntrinsicProps,
-	never
->;
+type InferFusionProps<T extends ReturnControls> = GetStoryProps<FusionProps<T>>;
 
 type FusionStory<T extends StoryInfo> = T &
 	StoryBase &
 	WithFusion &
-	StoryCreationKey<InferFusionProps<T["controls"]>, Instance>;
+	StoryCreationKey<InferFusionProps<T["controls"]>, Instance | StoryCleanup>;
