@@ -2,7 +2,7 @@ import Fusion from "@rbxts/fusion";
 import { ControlGroup } from "../ControlTypings/ControlUtils";
 import { AllControls, ControlsList, ReturnControls } from "../ControlTypings/Typing";
 import { GetStoryProps, InferControlType, StoryCleanup } from "./Typing";
-import { IntrinsicProps, StoryBase, StoryCreationKey, StoryInfo } from "./Typing";
+import { StoryBase, StoryCreationKey, StoryInfo } from "./Typing";
 
 interface WithFusion {
 	use?: "Fusion";
@@ -23,6 +23,7 @@ type InferFusionControls<T extends ReturnControls> = {
 
 type FusionProps<T extends ReturnControls> = {
 	controls: T extends ReturnControls ? InferFusionControls<T> : never;
+	scope: any;
 	target: Frame;
 };
 
