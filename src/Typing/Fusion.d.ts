@@ -5,7 +5,7 @@ import { GetStoryProps, InferControlType, StoryCleanup } from "./Typing";
 import { StoryBase, StoryCreationKey, StoryInfo } from "./Typing";
 
 interface WithFusion {
-	use?: "Fusion";
+	use?: "fusion";
 	fusion: typeof Fusion;
 }
 
@@ -32,4 +32,4 @@ type InferFusionProps<T extends ReturnControls> = GetStoryProps<FusionProps<T>>;
 type FusionStory<T extends StoryInfo> = T &
 	StoryBase &
 	WithFusion &
-	StoryCreationKey<InferFusionProps<T["controls"]>, Instance | StoryCleanup>;
+	StoryCreationKey<InferFusionProps<T["controls"]>, Instance | StoryCleanup | undefined | void>;

@@ -1,3 +1,4 @@
+import { ExtractWidenKeys } from "./ControlConversion";
 import { BaseControl } from "./Typing";
 
 export interface Primitives {
@@ -22,6 +23,7 @@ interface PrimitiveControlProps {
 }
 
 type PrimitiveControl<T extends keyof Primitives> = BaseControl<T, Primitives[T]> & PrimitiveControlProps[T];
+type ConvertPrimitive<T extends IsPrimitive> = PrimitiveControl<ExtractWidenKeys<Primitives, T>>;
 
 type Filter = (input: string, oldInput: string) => string;
 

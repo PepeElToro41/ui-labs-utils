@@ -7,9 +7,8 @@ interface BaseControl<T, C> {
 	EntryType: "Control";
 	Type: T;
 	ControlValue: C;
-	OnReset?: () => void;
+	Order?: number;
 }
-
 type IsPrimitiveControl = IsPrimitive | PrimitiveControl<keyof Primitives>;
 type IsDatatypeControl = IsDatatype | PrimitiveControl<keyof Primitives>;
 

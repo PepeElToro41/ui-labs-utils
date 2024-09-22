@@ -19,10 +19,10 @@ interface Storybook {
 }
 
 interface InputSignals {
-	InputBegan: Signal<(input: InputObject, gameProcessed: boolean) => void>;
-	InputEnded: Signal<(input: InputObject, gameProcessed: boolean) => void>;
-	InputChanged: Signal<(input: InputObject, gameProcessed: boolean) => void>;
-	MouseMoved: Signal<(mousePos: Vector2) => void>;
+	InputBegan: Signal<[input: InputObject, gameProcessed: boolean]>;
+	InputEnded: Signal<[input: InputObject, gameProcessed: boolean]>;
+	InputChanged: Signal<[input: InputObject, gameProcessed: boolean]>;
+	MouseMoved: Signal<[mousePos: Vector2]>;
 }
 
 interface StoryBase {

@@ -89,10 +89,10 @@
   resolved "https://registry.yarnpkg.com/@rbxts/fusion/-/fusion-0.2.0.tgz#082cbe02299abe36a0ff376535ce0eaac87ec190"
   integrity sha512-Hs+IXSPM+5KE4FMKh+zyifG2+1EI8B0K1DA3gN6TncwiQxdVzz6XchxRVI/BTqto7uLBtEAVMQzhrkUneaJNIQ==
 
-"@rbxts/iris@^2.2.0-ts.0":
-  version "2.2.0-ts.0"
-  resolved "https://registry.yarnpkg.com/@rbxts/iris/-/iris-2.2.0-ts.0.tgz#39845d47d731702cdf2efb4ca1baaa3d5d1863cf"
-  integrity sha512-oOiURnUsnPMztNk/2GitbJ5A0dnh8PtgyqcODX9IL651y7wZOfIX7f+N+/WDyiDs5HGuybOCUyU+VBzjjAdekw==
+"@rbxts/iris@^2.3.1-ts.0":
+  version "2.3.1-ts.0"
+  resolved "https://registry.yarnpkg.com/@rbxts/iris/-/iris-2.3.1-ts.0.tgz#0b6987102134259f151c3cf58b0d5f62624905e7"
+  integrity sha512-YMXNS45i5BOd2sRGm28I+EmFYNHFI5nqd72NodA7Nzsi/d/pf+l+s1+l4Feb0BqYvUa0Juhcd11NE2R3S3NKjg==
 
 "@rbxts/react-roblox@^0.3.6":
   version "0.3.6"
@@ -128,6 +128,11 @@
   version "1.0.731"
   resolved "https://registry.yarnpkg.com/@rbxts/types/-/types-1.0.731.tgz#a70eaa560a2f8ed22f80ad81682476cdf9c3cc30"
   integrity sha512-2iSGCO37voYcJ4q8wRuBF67zirC5kiP6pZAfX5v/Sg0szYj6VCiFBAh3sqW5+AcEs4u9gHtaa3NYituVGMlseQ==
+
+"@rbxts/vide@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@rbxts/vide/-/vide-0.4.5.tgz#cadea286d9a4108445b610e97f9c63c2762bc548"
+  integrity sha512-eOqoAZyqRCrc7VeijWSe3csvVO3smvNFI5KJgmZ/6SwvgQ02oWH6IetAK1eXhM2HyxSM+CGh5sWHxkFkJ1aAVQ==
 
 "@roblox-ts/luau-ast@^1.0.10":
   version "1.0.10"

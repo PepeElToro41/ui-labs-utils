@@ -2,7 +2,7 @@ import Roact from "@rbxts/roact";
 import { StoryInfo, StoryBase, StoryCreationKey, InferProps } from "./Typing";
 
 interface WithRoact {
-	use?: "Roact";
+	use?: "roact";
 	roact: typeof Roact;
 }
 

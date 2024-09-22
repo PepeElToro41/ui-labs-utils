@@ -19,6 +19,20 @@ function Environment.IsStory()
 
 	return env ~= nil
 end
+function UserInputFallback(userInput: any?)
+	if not userInput then
+		return
+	end
+	if userInput == UserInputService then
+		return
+	end
+
+	local clone = table.clone(userInput)
+
+	return setmetatable(clone, {
+		__index = UserInputService,
+	})
+end
 
 Environment.Unmount = SearchInEnv("Unmount", function() end) :: () -> ()
 
@@ -38,7 +52,7 @@ type InputSignals = {
 }
 
 Environment.InputListener = SearchInEnv("InputListener", nil) :: InputSignals
-Environment.UserInput = SearchInEnv("InputListener", UserInputService) :: UserInputService
+Environment.UserInput = UserInputFallback(SearchInEnv("InputListener", UserInputService)) :: UserInputService
 
 Environment.EnvironmentUID = SearchInEnv("EnvironmentUID", "") :: string
 Environment.PreviewUID = SearchInEnv("PreviewUID", "") :: string

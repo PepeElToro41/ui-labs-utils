@@ -6,5 +6,6 @@
 *.tsbuildinfo
 .DS_Store
 sourcemap.json
+/out
 
 /build.rbxm

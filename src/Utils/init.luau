@@ -1,6 +1,7 @@
 local Utils = {}
+local Types = require(script.Parent.Types)
 
-function Utils.ListenControl(info, callback)
+function Utils.ListenControl<T>(info: Types.GenericInfo<T>, callback: (newVal: T) -> ())
 	local oldValue = info.__old
 	local newValue = info.__new
 
@@ -9,7 +10,11 @@ function Utils.ListenControl(info, callback)
 	end
 end
 
-function Utils.CreateControlStates(converted, controls, creator)
+function Utils.CreateControlStates(
+	converted: { [string]: any },
+	controls: { [string]: any },
+	creator: (control: any) -> any
+)
 	local states = {}
 
 	for key, control in pairs(converted) do
@@ -25,7 +30,12 @@ function Utils.CreateControlStates(converted, controls, creator)
 	return states
 end
 
-function Utils.UpdateControlStates(states, converted, controls, updater)
+function Utils.UpdateControlStates(
+	states: { [string]: any },
+	converted: { [string]: any },
+	controls: { [string]: any },
+	updater: (state: any, value: any) -> ()
+)
 	for key, control in pairs(converted) do
 		local controlValue = controls[key]
 

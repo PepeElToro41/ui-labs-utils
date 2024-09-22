@@ -1,3 +1,4 @@
+import { ExtractWidenKeys } from "./ControlConversion";
 import { BaseControl } from "./Typing";
 
 export interface Datatypes {
@@ -29,6 +30,7 @@ interface DatatypeControlProps {
 }
 
 type DatatypeControl<T extends keyof Datatypes> = BaseControl<T, Datatypes[T]> & DatatypeControlProps[T];
+type ConvertDatatype<T extends IsDatatype> = DatatypeControl<ExtractWidenKeys<Datatypes, T>>;
 
 declare namespace Datatype {
 	function Color3(def: Color3): DatatypeControl<"Color3">;

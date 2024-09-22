@@ -5,6 +5,8 @@ import Roact from "@rbxts/roact";
 import { FusionStory, InferFusionProps, WithFusion } from "./Typing/Fusion";
 import { RoactStory, WithRoact } from "./Typing/Roact";
 import { GenericStory, InferGenericProps } from "./Typing/Generic";
+import { InferIrisProps, IrisStory, WithIris } from "./Typing/Iris";
+import { InferVideProps, VideStory, WithVide } from "./Typing/Vide";
 
 declare function CreateReactStory<T extends StoryInfo>(
 	info: T & StoryBase & WithReact,
@@ -18,8 +20,18 @@ declare function CreateRoactStory<T extends StoryInfo>(
 
 declare function CreateFusionStory<T extends StoryInfo>(
 	info: T & StoryBase & WithFusion,
-	render: StoryCreation<InferFusionProps<T["controls"]>, Instance>,
+	render: StoryCreation<InferFusionProps<T["controls"]>, Instance | StoryCleanup | undefined | void>,
 ): FusionStory<T>;
+
+declare function CreateIrisStory<T extends StoryInfo>(
+	info: T & StoryBase & WithIris,
+	render: StoryCreation<InferIrisProps<T["controls"]>, StoryCleanup | void | undefined>,
+): IrisStory<T>;
+
+declare function CreateVideStory<T extends StoryInfo>(
+	info: T & StoryBase & WithVide,
+	render: StoryCreation<InferVideProps<T["controls"]>, Vide.Node | void | undefined>,
+): VideStory<T>;
 
 declare function CreateGenericStory<T extends StoryInfo>(
 	info: T & StoryBase,

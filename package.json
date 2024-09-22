@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/ui-labs",
-	"version": "2.2.0-ts.1",
+	"version": "2.3.0-test1",
 	"description": "Utilities for UI-Labs, a storybook-like plugin for roblox",
 	"main": "src/init.lua",
 	"scripts": {
@@ -26,20 +26,22 @@
 	"files": [
 		"src",
 		"!**/*.tsbuildinfo",
-		"!**/*.spec.lua"
+		"!**/*.spec.lua",
+		"!build.rbxm"
 	],
 	"publishConfig": {
 		"access": "public"
 	},
 	"devDependencies": {
+		"@rbxts/compiler-types": "2.1.0-types.1",
+		"@rbxts/fusion": "^0.2.0",
+		"@rbxts/iris": "^2.3.1-ts.0",
 		"@rbxts/react": "^0.3.6",
 		"@rbxts/react-roblox": "^0.3.6",
 		"@rbxts/roact": "^1.4.4-ts.0",
-		"@rbxts/fusion": "^0.2.0",
-		"@rbxts/iris": "^2.2.0-ts.0",
-		"@rbxts/compiler-types": "2.1.0-types.1",
 		"@rbxts/services": "^1.5.1",
 		"@rbxts/types": "^1.0.704",
+		"@rbxts/vide": "^0.4.5",
 		"@typescript-eslint/eslint-plugin": "^5.61.0",
 		"@typescript-eslint/parser": "^5.61.0",
 		"eslint": "^8.44.0",

@@ -4,7 +4,7 @@ import React from "@rbxts/react";
 import ReactRoblox from "@rbxts/react-roblox";
 
 interface WithReact {
-	use?: "React";
+	use?: "react";
 	react: typeof React;
 	reactRoblox: typeof ReactRoblox;
 	renderer?: "deferred" | "legacy";

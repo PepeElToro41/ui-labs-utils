@@ -26,12 +26,7 @@ function Controls.EnumList<T>(list: RecordList<T>, def: string): Utils.Control<T
 
 	local control = CreateBaseControl("EnumList", list[def])
 	control.List = list
-	control.CurrentIndex = def
 	control.DefIndex = def
-
-	control.OnReset = function()
-		control.CurrentIndex = def
-	end
 
 	return control
 end
