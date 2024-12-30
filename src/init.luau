@@ -8,25 +8,6 @@ local Utils = require(script.Utils)
 local Environment = require(script.Environment)
 local Types = require(script.Types)
 
-type PrimitiveControls = typeof(PrimitiveControls)
-type DatatypeControls = typeof(DatatypeControls)
-type AdvancedControls = typeof(AdvancedControls)
-type ControlUtils = typeof(ControlUtils)
-type ControlConversion = typeof(ControlConversion)
-type StoryCreators = typeof(StoryCreators)
-type Utils = typeof(Utils)
-type Environment = typeof(Environment)
-
-type UILabs =
-	PrimitiveControls
-	& AdvancedControls
-	& StoryCreators
-	& ControlUtils
-	& ControlConversion
-	& Utils
-	& { Datatype: DatatypeControls }
-	& { Environment: Environment }
-
 export type Storybook = Types.Storybook
 export type FunctionStory = Types.FunctionStory
 export type ReactStory = Types.ReactStory
@@ -44,25 +25,38 @@ export type GenericProps = Types.GenericProps
 export type GenericInfo<T> = Types.GenericInfo<T>
 export type SubscribeListener = Types.SubscribeListener
 
-function CombinedExport(...)
-	local final = {}
-	for _, module in pairs({ ... }) do
-		for key, export in pairs(module) do
-			final[key] = export
-		end
-	end
-	return final
-end
+local UILabs = {
+	Boolean = PrimitiveControls.Boolean,
+	Number = PrimitiveControls.Number,
+	String = PrimitiveControls.String,
 
-local UILabs = CombinedExport(
-	PrimitiveControls,
-	ControlUtils,
-	Utils,
-	ControlConversion,
-	AdvancedControls,
-	StoryCreators,
-	{ Environment = Environment },
-	{ Datatype = DatatypeControls }
-) :: UILabs
+	Choose = AdvancedControls.Choose,
+	EnumList = AdvancedControls.EnumList,
+	Object = AdvancedControls.Object,
+	RGBA = AdvancedControls.RGBA,
+	Slider = AdvancedControls.Slider,
+
+	Primitive = PrimitiveControls.Primitive,
+	Advanced = AdvancedControls,
+	Datatype = DatatypeControls,
+
+	ListenControl = Utils.ListenControl,
+	CreateControlStates = Utils.CreateControlStates,
+	UpdateControlStates = Utils.UpdateControlStates,
+
+	ControlGroup = ControlUtils.ControlGroup,
+	Ordered = ControlUtils.Ordered,
+
+	ConvertControl = ControlConversion.ConvertControl,
+
+	CreateGenericStory = StoryCreators.CreateGenericStory,
+	CreateReactStory = StoryCreators.CreateReactStory,
+	CreateRoactStory = StoryCreators.CreateRoactStory,
+	CreateFusionStory = StoryCreators.CreateFusionStory,
+	CreateIrisStory = StoryCreators.CreateIrisStory,
+	CreateVideStory = StoryCreators.CreateVideStory,
+
+	Environment = Environment,
+}
 
 return UILabs

@@ -21,16 +21,24 @@ function Environment.IsStory()
 end
 function UserInputFallback(userInput: any?)
 	if not userInput then
-		return
+		return UserInputService
 	end
 	if userInput == UserInputService then
-		return
+		return UserInputService
 	end
 
 	local clone = table.clone(userInput)
-
 	return setmetatable(clone, {
-		__index = UserInputService,
+		__index = function(_, key)
+			local value = UserInputService[key]
+			if typeof(value) == "function" then
+				-- Wrap the function to replace self
+				return function(_, ...)
+					return value(UserInputService, ...)
+				end
+			end
+			return value
+		end,
 	})
 end
 

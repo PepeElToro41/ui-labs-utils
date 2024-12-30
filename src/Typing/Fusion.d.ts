@@ -7,6 +7,7 @@ import { StoryBase, StoryCreationKey, StoryInfo } from "./Typing";
 interface WithFusion {
 	use?: "fusion";
 	fusion: typeof Fusion;
+   scoped?: defined[]
 }
 
 type InferFusionControlGroup<T extends ControlsList = ControlsList> = {

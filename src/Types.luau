@@ -4,12 +4,13 @@ export type Storybook = {
 	groupRoots: boolean?,
 }
 type Cleanup = () -> ()
-export type FunctionStory = (frame: Frame) -> Cleanup
+export type FunctionStory = (target: Frame) -> Cleanup
 
 export type StoryBase = {
 	name: string?,
 	summary: string?,
 	cleanup: Cleanup?,
+	controls: StoryControls?,
 }
 
 type StoryControls = { [string]: any }
@@ -46,8 +47,9 @@ export type FusionProps = {
 }
 
 export type WithFusion = {
-	use: "fusion",
+	use: "fusion"?,
 	fusion: any,
+	scoped: { any }?,
 }
 
 export type FusionStoryKey = (props: FusionProps) -> Cleanup | nil | Instance
@@ -63,11 +65,11 @@ export type IrisProps = {
 }
 
 export type WithIris = {
-	use: "iris",
+	use: "iris"?,
 	iris: any,
 }
 
-export type IrisStoryKey = (props: IrisProps) -> Cleanup | nil
+export type IrisStoryKey = (props: IrisProps) -> Cleanup? | nil
 export type IrisStory = StoryBase & WithIris & {
 	story: IrisStoryKey,
 }
@@ -80,11 +82,11 @@ export type VideProps = {
 }
 
 export type WithVide = {
-	use: "vide",
+	use: "vide"?,
 	vide: any,
 }
 
-export type VideStoryKey = (props: VideProps) -> Cleanup | nil
+export type VideStoryKey = (props: VideProps) -> ((...any) -> any)?
 export type VideStory = StoryBase & WithVide & {
 	story: VideStoryKey,
 }
@@ -107,4 +109,4 @@ export type GenericStory = StoryBase & {
 	render: GenericRenderKey,
 }
 
-return {}
+return nil

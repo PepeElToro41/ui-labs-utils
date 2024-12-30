@@ -1,0 +1,19 @@
+name = "pepeeltoro41/ui_labs"
+version = "0.0.2"
+description = "Utilities for UI Labs, a storybook-like plugin for roblox"
+authors = ["PepeElToro41"]
+repository = "https://github.com/PepeElToro41/ui-labs"
+license = "MIT"
+includes = ["pesde.toml", "README.md", "LICENSE.md", "src"]
+
+[target]
+environment = "roblox"
+lib = "src/init.luau"
+build_files = ["src"]
+
+[scripts]
+roblox_sync_config_generator = ".pesde/roblox_sync_config_generator.luau"
+sourcemap_generator = ".pesde/sourcemap_generator.luau"
+
+[indices]
+default = "https://github.com/pesde-pkg/index"
