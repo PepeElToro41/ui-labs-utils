@@ -7,6 +7,7 @@ local ControlConversion = require(script.Controls.ControlConversion)
 local Utils = require(script.Utils)
 local Environment = require(script.Environment)
 local Types = require(script.Types)
+local Version = require(script.Version)
 
 export type Storybook = Types.Storybook
 export type FunctionStory = Types.FunctionStory
@@ -26,6 +27,7 @@ export type GenericInfo<T> = Types.GenericInfo<T>
 export type SubscribeListener = Types.SubscribeListener
 
 local UILabs = {
+	_version = Version,
 	Boolean = PrimitiveControls.Boolean,
 	Number = PrimitiveControls.Number,
 	String = PrimitiveControls.String,

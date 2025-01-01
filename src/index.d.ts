@@ -35,3 +35,5 @@ export { ConvertControl } from "./ControlTypings/ControlConversion";
 export { ControlGroup, Ordered } from "./ControlTypings/ControlUtils";
 export { Datatype } from "./ControlTypings/Datatypes";
 export { Environment } from "./Environment";
+
+export const _version: string;

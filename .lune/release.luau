@@ -60,9 +60,11 @@ if not fs.isFile(`changelog_generation/versions/{version_name}.md`) then
 	error("Changelog file not found for version: " .. version_name)
 end
 
-publish.wally(new_version)
-publish.pesde(new_version)
-publish.npm(new_version)
+fs.writeFile("src/Version.luau", `return "{version_name}"`)
+
+--publish.wally(new_version)
+--publish.pesde(new_version)
+--publish.npm(new_version)
 publish.create_release(new_version)
 
-fs.writeFile("changelog_generation/version.json", serde.encode("json", new_version, true))
+--fs.writeFile("changelog_generation/version.json", serde.encode("json", new_version, true))
