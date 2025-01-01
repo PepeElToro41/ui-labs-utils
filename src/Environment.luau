@@ -66,5 +66,6 @@ Environment.EnvironmentUID = SearchInEnv("EnvironmentUID", "") :: string
 Environment.PreviewUID = SearchInEnv("PreviewUID", "") :: string
 Environment.OriginalG = SearchInEnv("OriginalG", _G) :: any
 Environment.PluginWidget = SearchInEnv("PluginWidget", nil) :: DockWidgetPluginGui
+Environment.Plugin = SearchInEnv("Plugin", plugin) :: Plugin
 
 return Environment

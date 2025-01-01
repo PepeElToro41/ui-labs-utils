@@ -1,14 +1,10 @@
 [package]
-name = "pepeeltoro41/ui-labs"
-description = "Utilities for UI Labs, a storybook-like plugin for roblox"
-license = "MIT"
-version = "2.3.2"
 authors = ["PepeElToro41"]
-
-registry = "https://github.com/UpliftGames/wally-index"
-realm = "shared"
-
-exclude = ["**", "src/*.ts"]
+description = "Utilities for UI Labs, a storybook-like plugin for roblox"
+exclude = [
+    "**",
+    "src/*.ts",
+]
 include = [
     "src",
     "src/**",
@@ -18,3 +14,8 @@ include = [
     "LICENSE.md",
     "README.md",
 ]
+license = "MIT"
+name = "pepeeltoro41/ui-labs"
+realm = "shared"
+registry = "https://github.com/UpliftGames/wally-index"
+version = "2.3.4"

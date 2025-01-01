@@ -1,6 +1,7 @@
 local proccess = require("@lune/process")
 local serde = require("@lune/serde")
 local fs = require("@lune/fs")
+local stdio = require("@lune/stdio")
 local publish = require("publish")
 
 local common = require("common")
@@ -45,15 +46,23 @@ end
 
 local version_name = `{new_version.major}.{new_version.minor}.{new_version.patch}`
 
+local shouldPublish = stdio.prompt("confirm", `Releasing version {version_name}. Proceed?`)
+
+if not shouldPublish then
+	error("Release aborted")
+	return
+end
+
+print("")
 print("Publishing version as: " .. version_name)
 
 if not fs.isFile(`changelog_generation/versions/{version_name}.md`) then
 	error("Changelog file not found for version: " .. version_name)
 end
 
--- publish.wally(new_version)
--- publish.pesde(new_version)
--- publish.npm(new_version)
+publish.wally(new_version)
+publish.pesde(new_version)
+publish.npm(new_version)
 publish.create_release(new_version)
 
 fs.writeFile("changelog_generation/version.json", serde.encode("json", new_version, true))

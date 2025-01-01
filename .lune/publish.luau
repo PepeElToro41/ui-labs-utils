@@ -10,49 +10,66 @@ local publish = {}
 type PublishInfo = {
 	version: string,
 }
+type WallyInfo = {
+	package: {
+		version: string,
+	},
+}
 
 function publish.wally(version: common.Version)
+	print("")
 	print("Publishing to Wally...")
+	print("")
 
-	local wally_info: PublishInfo = serde.decode("toml", fs.readFile("wally.toml"))
-	wally_info.version = common.get_version_name(version)
+	local wally_info: WallyInfo = serde.decode("toml", fs.readFile("wally.toml"))
+	wally_info.package.version = common.get_version_name(version)
 
 	fs.writeFile("wally.toml", serde.encode("toml", wally_info, true))
 
-	local success, err = pcall(function() end)
+	local output = process.spawn("wally", { "publish" }, { stdio = "forward" })
 
-	if not success then
-		error("Failed to publish to Wally: " .. err)
+	if not output.ok then
+		error("Failed to publish to Wally: ", output.stderr)
 	end
 end
 
 function publish.pesde(version: common.Version)
+	print("")
 	print("Publishing to Pesde...")
+	print("")
 
 	local pesde_info: PublishInfo = serde.decode("toml", fs.readFile("pesde.toml"))
 	pesde_info.version = common.get_version_name(version)
 
 	fs.writeFile("pesde.toml", serde.encode("toml", pesde_info, true))
 
-	local success, err = pcall(function() end)
+	if fs.isFile("pesde.lock") then
+		fs.removeFile("pesde.lock")
+	end
 
-	if not success then
-		error("Failed to publish to Pesde: " .. err)
+	process.spawn("pesde", { "install" }, { stdio = "forward" })
+
+	local output = process.spawn("pesde", { "publish" }, { stdio = "forward" })
+
+	if not output.ok then
+		error("Failed to publish to Pesde: ", output.stderr)
 	end
 end
 
 function publish.npm(version: common.Version)
+	print("")
 	print("Publishing to NPM...")
+	print("")
 
 	local npm_info: PublishInfo = serde.decode("json", fs.readFile("package.json"))
 	npm_info.version = common.get_version_name(version)
 
 	fs.writeFile("package.json", serde.encode("json", npm_info, true))
 
-	local success, err = pcall(function() end)
+	local result = process.spawn("npm", { "publish" }, { stdio = "forward", shell = true })
 
-	if not success then
-		error("Failed to publish to NPM: " .. err)
+	if not result.ok then
+		error("Failed to publish to NPM: ", result.stderr)
 	end
 end
 
@@ -60,7 +77,9 @@ local RELEASE_TITLE_TEMPLARE = "UI Labs Utils %s"
 local BUILD_NAME = "Package"
 
 function publish.create_release(version: common.Version)
+	print("")
 	print("Creating GitHub release...")
+	print("")
 
 	local release_name = common.get_version_name(version)
 	local tag_name = `v{release_name}`
