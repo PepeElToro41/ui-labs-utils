@@ -62,9 +62,9 @@ end
 
 fs.writeFile("src/Version.luau", `return "{version_name}"`)
 
---publish.wally(new_version)
---publish.pesde(new_version)
---publish.npm(new_version)
+publish.wally(new_version)
+publish.pesde(new_version)
+publish.npm(new_version)
 publish.create_release(new_version)
 
---fs.writeFile("changelog_generation/version.json", serde.encode("json", new_version, true))
+fs.writeFile("changelog_generation/version.json", serde.encode("json", new_version, true))
