@@ -60,6 +60,7 @@ type InferProps<C extends ReturnControls> = GetStoryProps<StoryProps<C>>;
 
 interface IntrinsicProps {
 	inputListener: InputSignals;
+	target: Frame;
 }
 type StoryCreation<T extends {}, C> = (props: T) => C;
 

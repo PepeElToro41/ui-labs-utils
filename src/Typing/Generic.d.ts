@@ -35,7 +35,6 @@ type SubscribeListener<T extends ReturnControls> = (
 
 type GenericProps<T extends ReturnControls> = {
 	controls: T extends ReturnControls ? InferControls<T> : never;
-	target: Frame;
 	converted: ConvertedControls;
 	subscribe: (listener: SubscribeListener<T>) => StoryCleanup;
 };

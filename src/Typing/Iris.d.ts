@@ -30,7 +30,6 @@ type InferIrisControls<T extends ReturnControls> = {
 
 type IrisControlProps<T extends ReturnControls> = {
 	controls: T extends ReturnControls ? InferIrisControls<T> : never;
-	target: Frame;
 };
 
 type InferIrisProps<T extends ReturnControls> = GetStoryProps<IrisControlProps<T>>;

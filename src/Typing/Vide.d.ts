@@ -23,7 +23,6 @@ type InferVideControls<T extends ReturnControls> = {
 
 type VideProps<T extends ReturnControls> = {
 	controls: T extends ReturnControls ? InferVideControls<T> : never;
-	target: Frame;
 };
 
 type InferVideProps<T extends ReturnControls> = GetStoryProps<VideProps<T>>;

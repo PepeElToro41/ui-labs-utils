@@ -7,7 +7,7 @@ import { StoryBase, StoryCreationKey, StoryInfo } from "./Typing";
 interface WithFusion {
 	use?: "fusion";
 	fusion: typeof Fusion;
-   scoped?: defined[]
+	scoped?: defined[];
 }
 
 type InferFusionControlGroup<T extends ControlsList = ControlsList> = {
@@ -25,7 +25,6 @@ type InferFusionControls<T extends ReturnControls> = {
 type FusionProps<T extends ReturnControls> = {
 	controls: T extends ReturnControls ? InferFusionControls<T> : never;
 	scope: any;
-	target: Frame;
 };
 
 type InferFusionProps<T extends ReturnControls> = GetStoryProps<FusionProps<T>>;
