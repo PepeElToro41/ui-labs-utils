@@ -52,7 +52,7 @@ export type WithFusion = {
 	scoped: { any }?,
 }
 
-export type FusionStoryKey = (props: FusionProps) -> Cleanup | nil | Instance
+export type FusionStoryKey = (props: FusionProps) -> any?
 export type FusionStory = StoryBase & WithFusion & {
 	story: FusionStoryKey,
 }

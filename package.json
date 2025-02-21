@@ -52,5 +52,5 @@
     "watch": "rbxtsc -w --type=game -p test -i test/include"
   },
   "types": "src/index.d.ts",
-  "version": "2.3.6"
+  "version": "2.3.7"
 }

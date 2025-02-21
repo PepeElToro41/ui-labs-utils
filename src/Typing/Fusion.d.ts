@@ -32,4 +32,13 @@ type InferFusionProps<T extends ReturnControls> = GetStoryProps<FusionProps<T>>;
 type FusionStory<T extends StoryInfo> = T &
 	StoryBase &
 	WithFusion &
-	StoryCreationKey<InferFusionProps<T["controls"]>, Instance | StoryCleanup | undefined | void>;
+	StoryCreationKey<
+		InferFusionProps<T["controls"]>,
+		| Instance
+		| StoryCleanup
+		| Fusion.Value<Instance>
+		| Fusion.Value<Instance[]>
+		| Instance[]
+		| undefined
+		| void
+	>;
