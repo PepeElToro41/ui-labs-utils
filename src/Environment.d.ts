@@ -12,7 +12,7 @@ export declare namespace Environment {
 	const Reload: () => void;
 	const CreateSnapshot: (name?: string) => void;
 	const SetStoryHolder: (holder?: Instance | undefined) => void;
-	const GetJanitor: <T extends object | void = void>() => Janitor<T>;
+	const GetJanitor: <T extends object | void = void>() => Janitor<T> | undefined;
 
 	const InputListener: InputSignals;
 	const UserInput: UserInputService;
