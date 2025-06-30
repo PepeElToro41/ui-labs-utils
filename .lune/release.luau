@@ -41,7 +41,16 @@ else
 		error("Invalid release type")
 	end
 
-	new_version[release_type] += 1
+	if release_type == "major" then
+		new_version.major += 1
+		new_version.minor = 0
+		new_version.patch = 0
+	elseif release_type == "minor" then
+		new_version.minor += 1
+		new_version.patch = 0
+	else
+		new_version.patch += 1
+	end
 end
 
 local version_name = `{new_version.major}.{new_version.minor}.{new_version.patch}`
