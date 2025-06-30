@@ -49,7 +49,7 @@ function publish.pesde(version: common.Version)
 
 	process.spawn("pesde", { "install" }, { stdio = "forward" })
 
-	local output = process.spawn("pesde", { "publish" }, { stdio = "forward" })
+	local output = process.spawn("pesde", { "publish", "-y" }, { stdio = "forward" })
 
 	if not output.ok then
 		error("Failed to publish to Pesde: ", output.stderr)
