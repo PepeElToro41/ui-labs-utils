@@ -12,7 +12,14 @@ export {
 } from "./StoryCreators";
 export { ListenControl, CreateControlStates, UpdateControlStates } from "./Utils";
 
-export { InferControls, InferControlType, FunctionStory, Storybook, InputSignals } from "./Typing/Typing";
+export {
+	InferControls,
+	InferControlType,
+	FunctionStory,
+	Storybook,
+	InputSignals,
+	InferProps,
+} from "./Typing/Typing";
 
 export { ReactStory } from "./Typing/React";
 export { RoactStory } from "./Typing/Roact";

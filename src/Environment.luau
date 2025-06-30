@@ -57,6 +57,7 @@ type InputSignals = {
 	InputEnded: RBXScriptSignal,
 	InputChanged: RBXScriptSignal,
 	MouseMoved: RBXScriptSignal,
+	GetMouseLocation: (self: any) -> Vector2,
 }
 
 Environment.InputListener = SearchInEnv("InputListener", nil) :: InputSignals

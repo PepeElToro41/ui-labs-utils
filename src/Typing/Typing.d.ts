@@ -23,6 +23,7 @@ interface InputSignals {
 	InputEnded: Signal<[input: InputObject, gameProcessed: boolean]>;
 	InputChanged: Signal<[input: InputObject, gameProcessed: boolean]>;
 	MouseMoved: Signal<[mousePos: Vector2]>;
+	GetMouseLocation(): Vector2;
 }
 
 interface StoryBase {
