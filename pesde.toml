@@ -4,7 +4,7 @@ includes = [
     "pesde.toml",
     "README.md",
     "LICENSE.md",
-    "src",
+    "src/**",
 ]
 license = "MIT"
 name = "pepeeltoro41/ui_labs"
