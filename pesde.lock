@@ -2,5 +2,5 @@
 # It is not intended for manual editing.
 format = 2
 name = "pepeeltoro41/ui_labs"
-version = "2.4.1"
+version = "2.4.2"
 target = "roblox"

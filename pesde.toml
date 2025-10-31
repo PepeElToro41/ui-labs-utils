@@ -9,7 +9,7 @@ includes = [
 license = "MIT"
 name = "pepeeltoro41/ui_labs"
 repository = "https://github.com/PepeElToro41/ui-labs"
-version = "2.4.1"
+version = "2.4.2"
 
 [indices]
 default = "https://github.com/pesde-pkg/index"
