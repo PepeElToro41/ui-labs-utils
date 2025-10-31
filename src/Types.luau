@@ -86,7 +86,7 @@ export type WithVide = {
 	vide: any,
 }
 
-export type VideStoryKey = (props: VideProps) -> ((...any) -> any)?
+export type VideStoryKey = (props: VideProps) -> any?
 export type VideStory = StoryBase & WithVide & {
 	story: VideStoryKey,
 }
